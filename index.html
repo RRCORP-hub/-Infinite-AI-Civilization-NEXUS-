@@ -323,7 +323,7 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             background: linear-gradient(45deg, var(--secondary), var(--accent));
             -webkit-background-clip: text;
@@ -347,6 +347,39 @@
             margin-top: 30px;
         }
 
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .trust-badge i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .trust-badge h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .trust-badge p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -363,6 +396,7 @@
             border: 1px solid rgba(0, 243, 255, 0.2);
             backdrop-filter: blur(5px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
 
         .project-card:hover {
@@ -371,9 +405,23 @@
             box-shadow: var(--glow);
         }
 
+        .project-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
         .project-image {
             height: 200px;
             overflow: hidden;
+            position: relative;
         }
 
         .project-image img {
@@ -438,6 +486,335 @@
             border-radius: 5px;
             width: 0;
             transition: width 1s ease-in-out;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background: linear-gradient(135deg, rgba(10, 10, 42, 0.8), rgba(0, 0, 0, 0.9));
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+            box-shadow: var(--glow);
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        /* Impact Section */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: var(--glow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Security Section */
+        .security {
+            background: linear-gradient(135deg, rgba(10, 10, 42, 0.8), rgba(0, 0, 0, 0.9));
+        }
+
+        .security-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .security-feature {
+            text-align: center;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .security-feature:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: var(--glow);
+        }
+
+        .security-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, rgba(10, 10, 42, 0.8), rgba(0, 0, 0, 0.9));
+        }
+
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: var(--glow);
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+
+        .testimonial-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            overflow: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .faq-item:hover {
+            border-color: var(--secondary);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(0, 243, 255, 0.1);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px 20px;
+        }
+
+        /* Partners Section */
+        .partners {
+            background: linear-gradient(135deg, rgba(10, 10, 42, 0.8), rgba(0, 0, 0, 0.9));
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            background: linear-gradient(to right, var(--primary), var(--accent-2));
+            padding: 80px 0;
+        }
+
+        .cta h2 {
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 42, 0.9);
+            color: white;
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(0, 243, 255, 0.3);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--light);
+            text-shadow: var(--glow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo span {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 243, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            box-shadow: var(--glow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Donation Modal */
@@ -561,192 +938,6 @@
             box-shadow: var(--glow);
         }
 
-        /* How It Works Section */
-        .how-it-works {
-            background: linear-gradient(135deg, rgba(10, 10, 42, 0.8), rgba(0, 0, 0, 0.9));
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .step {
-            text-align: center;
-            padding: 30px;
-            background: var(--card-bg);
-            border-radius: 15px;
-            border: 1px solid rgba(0, 243, 255, 0.2);
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
-        }
-
-        .step:hover {
-            transform: translateY(-10px);
-            border-color: var(--secondary);
-            box-shadow: var(--glow);
-        }
-
-        .step-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-
-        .step-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--light);
-        }
-
-        /* Impact Section */
-        .impact-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 30px;
-            background: var(--card-bg);
-            border-radius: 15px;
-            border: 1px solid rgba(0, 243, 255, 0.2);
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
-        }
-
-        .stat:hover {
-            transform: translateY(-5px);
-            border-color: var(--secondary);
-            box-shadow: var(--glow);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-label {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        /* FAQ Section */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-            background: var(--card-bg);
-            border-radius: 10px;
-            border: 1px solid rgba(0, 243, 255, 0.2);
-            overflow: hidden;
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
-        }
-
-        .faq-item:hover {
-            border-color: var(--secondary);
-        }
-
-        .faq-question {
-            padding: 20px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--secondary);
-            transition: var(--transition);
-        }
-
-        .faq-question:hover {
-            background: rgba(0, 243, 255, 0.1);
-        }
-
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding: 0 20px 20px;
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(10, 10, 42, 0.9);
-            color: white;
-            padding: 50px 0 20px;
-            border-top: 1px solid rgba(0, 243, 255, 0.3);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: var(--light);
-            text-shadow: var(--glow);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-logo span {
-            color: var(--secondary);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(0, 243, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background: var(--secondary);
-            color: var(--dark);
-            box-shadow: var(--glow);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
         /* Notification */
         .notification {
             position: fixed;
@@ -854,7 +1045,7 @@
                 font-size: 2.5rem;
             }
             
-            .hero-buttons {
+            .hero-buttons, .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
@@ -865,6 +1056,11 @@
 
             .footer-content {
                 grid-template-columns: 1fr;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -923,6 +1119,7 @@
                     <li><a href="#projects">Proyek</a></li>
                     <li><a href="#how-it-works">Cara Kerja</a></li>
                     <li><a href="#impact">Dampak</a></li>
+                    <li><a href="#security">Keamanan</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
                 <div class="wallet-connect">
@@ -943,11 +1140,30 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Dukung Inovasi dengan Web3</h1>
-                <p>Platform donasi terdesentralisasi untuk mendukung proyek-proyek inovatif yang mengubah dunia. Transparan, aman, dan langsung ke pembuat proyek.</p>
+                <h1>Dukung Inovasi dengan Teknologi Web3</h1>
+                <p>Platform donasi terdesentralisasi pertama yang memanfaatkan blockchain untuk memastikan transparansi, keamanan, dan akuntabilitas penuh dalam setiap donasi.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn">Jelajahi Proyek</a>
                     <a href="#how-it-works" class="btn btn-accent">Pelajari Cara Kerja</a>
+                    <a href="#impact" class="btn btn-success">Lihat Dampak Kami</a>
+                </div>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>100% Transparan</h3>
+                        <p>Setiap transaksi tercatat di blockchain</p>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-lock"></i>
+                        <h3>Keamanan Terjamin</h3>
+                        <p>Dana Anda aman dengan teknologi terkini</p>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-globe"></i>
+                        <h3>Global Impact</h3>
+                        <p>Dukung proyek dari seluruh dunia</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -957,6 +1173,7 @@
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title">Proyek yang Membutuhkan Dukungan</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Temukan proyek-proyek inovatif yang sedang mengubah dunia. Pilih yang paling sesuai dengan passion Anda.</p>
             <div class="projects-grid" id="projectsGrid">
                 <!-- Projects will be loaded dynamically -->
             </div>
@@ -967,34 +1184,35 @@
     <section id="how-it-works" class="section how-it-works">
         <div class="container">
             <h2 class="section-title">Cara Berkontribusi</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Hanya dengan 4 langkah mudah, Anda dapat mendukung inovasi dan perubahan positif di dunia.</p>
             <div class="steps">
                 <div class="step fade-in">
                     <div class="step-icon">
                         <i class="fas fa-wallet"></i>
                     </div>
                     <h3 class="step-title">Hubungkan Wallet</h3>
-                    <p>Hubungkan dompet MetaMask Anda untuk mulai berdonasi menggunakan cryptocurrency.</p>
+                    <p>Hubungkan dompet MetaMask atau wallet Web3 lainnya untuk mulai berdonasi menggunakan cryptocurrency.</p>
                 </div>
                 <div class="step fade-in delay-1">
                     <div class="step-icon">
                         <i class="fas fa-search"></i>
                     </div>
                     <h3 class="step-title">Jelajahi Proyek</h3>
-                    <p>Temukan proyek-proyek inovatif yang sesuai dengan passion dan minat Anda.</p>
+                    <p>Temukan proyek-proyek inovatif yang sesuai dengan passion dan minat Anda. Filter berdasarkan kategori.</p>
                 </div>
                 <div class="step fade-in delay-2">
                     <div class="step-icon">
                         <i class="fas fa-donate"></i>
                     </div>
                     <h3 class="step-title">Berdonasi</h3>
-                    <p>Berdonasi dengan jumlah yang Anda inginkan dan dukung inovasi masa depan.</p>
+                    <p>Berdonasi dengan jumlah yang Anda inginkan dan dukung inovasi masa depan. Proses cepat dan aman.</p>
                 </div>
                 <div class="step fade-in delay-3">
                     <div class="step-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3 class="step-title">Lacak Dampak</h3>
-                    <p>Lacak perkembangan proyek dan dampak donasi Anda terhadap ekosistem.</p>
+                    <p>Lacak perkembangan proyek dan dampak donasi Anda terhadap ekosistem melalui dashboard personal.</p>
                 </div>
             </div>
         </div>
@@ -1004,6 +1222,7 @@
     <section id="impact" class="section">
         <div class="container">
             <h2 class="section-title">Dampak Kami</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Bergabunglah dengan komunitas kami yang telah membuat perubahan nyata di seluruh dunia.</p>
             <div class="impact-stats">
                 <div class="stat fade-in">
                     <div class="stat-number" id="projectsCount">0</div>
@@ -1025,10 +1244,127 @@
         </div>
     </section>
 
+    <!-- Security Section -->
+    <section id="security" class="section security">
+        <div class="container">
+            <h2 class="section-title">Keamanan & Transparansi</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Kami mengutamakan keamanan dan transparansi dalam setiap aspek platform kami.</p>
+            <div class="security-features">
+                <div class="security-feature fade-in">
+                    <div class="security-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="step-title">Smart Contract Teraudit</h3>
+                    <p>Semua smart contract kami telah melalui proses audit keamanan oleh firma terkemuka.</p>
+                </div>
+                <div class="security-feature fade-in delay-1">
+                    <div class="security-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="step-title">Transparansi Blockchain</h3>
+                    <p>Setiap transaksi tercatat secara permanen di blockchain dan dapat diverifikasi oleh siapa saja.</p>
+                </div>
+                <div class="security-feature fade-in delay-2">
+                    <div class="security-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="step-title">Protection System</h3>
+                    <p>Sistem perlindungan canggih untuk mencegah penipuan dan memastikan dana sampai ke tujuan.</p>
+                </div>
+                <div class="security-feature fade-in delay-3">
+                    <div class="security-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 class="step-title">Verifikasi Proyek</h3>
+                    <p>Semua proyek melalui proses verifikasi ketat sebelum ditampilkan di platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">Apa Kata Mereka</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Dengarkan pengalaman langsung dari para donatur dan penerima donasi.</p>
+            <div class="testimonials-container">
+                <div class="testimonial fade-in">
+                    <div class="testimonial-content">
+                        <p>"Web3OpenProjek telah mengubah cara saya berdonasi. Transparansi yang diberikan melalui blockchain membuat saya yakin bahwa donasi saya benar-benar sampai kepada yang membutuhkan."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Budi Santoso</h4>
+                            <p>Donatur Sejak 2022</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial fade-in delay-1">
+                    <div class="testimonial-content">
+                        <p>"Sebagai penggagas proyek, platform ini memberikan saya akses kepada komunitas global yang peduli dengan inovasi. Dana yang terkumpul benar-benar membantu merealisasikan ide saya."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Diana Putri</h4>
+                            <p>Penerima Donasi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial fade-in delay-2">
+                    <div class="testimonial-content">
+                        <p>"Saya sangat terkesan dengan antarmuka yang user-friendly dan proses donasi yang cepat. Fitur pelacakan donasi melalui blockchain adalah terobosan yang brilliant."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Avatar">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Rizky Ahmad</h4>
+                            <p>Donatur Blockchain</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="section partners">
+        <div class="container">
+            <h2 class="section-title">Berkolaborasi dengan</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Kami bangga bermitra dengan organisasi terkemuka dalam ekosistem blockchain dan filantropi.</p>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <i class="fab fa-ethereum" style="font-size: 3rem; color: var(--secondary);"></i>
+                    <p>Ethereum Foundation</p>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-hands-helping" style="font-size: 3rem; color: var(--secondary);"></i>
+                    <p>Blockchain for Good</p>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-seedling" style="font-size: 3rem; color: var(--secondary);"></i>
+                    <p>Green Crypto Initiative</p>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-globe-asia" style="font-size: 3rem; color: var(--secondary);"></i>
+                    <p>Asia Blockchain Alliance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section id="faq" class="section">
         <div class="container">
             <h2 class="section-title">Pertanyaan Umum</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Temukan jawaban atas pertanyaan yang paling sering diajukan tentang platform kami.</p>
             <div class="faq-container">
                 <div class="faq-item fade-in">
                     <div class="faq-question">
@@ -1036,7 +1372,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Web3OpenProjek adalah platform donasi terdesentralisasi yang memanfaatkan teknologi blockchain untuk memungkinkan pendanaan proyek-proyek inovatif secara transparan dan aman.</p>
+                        <p>Web3OpenProjek adalah platform donasi terdesentralisasi yang memanfaatkan teknologi blockchain untuk memungkinkan pendanaan proyek-proyek inovatif secara transparan dan aman. Kami menghubungkan para inovator dengan komunitas yang ingin mendukung ide-ide brilian.</p>
                     </div>
                 </div>
                 <div class="faq-item fade-in delay-1">
@@ -1045,7 +1381,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Pertama, hubungkan dompet MetaMask Anda. Kemudian pilih proyek yang ingin Anda dukung, tentukan jumlah donasi, dan konfirmasi transaksi melalui MetaMask.</p>
+                        <p>Pertama, hubungkan dompet MetaMask atau wallet Web3 lainnya Anda. Kemudian pilih proyek yang ingin Anda dukung, tentukan jumlah donasi, dan konfirmasi transaksi melalui wallet Anda. Prosesnya cepat, aman, dan transparan.</p>
                     </div>
                 </div>
                 <div class="faq-item fade-in delay-2">
@@ -1054,7 +1390,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Ya, semua transaksi dilakukan melalui smart contract di blockchain, menjamin keamanan dan transparansi. Dana langsung dikirim ke pembuat proyek tanpa perantara.</p>
+                        <p>Ya, semua transaksi dilakukan melalui smart contract yang telah diaudit di blockchain, menjamin keamanan dan transparansi. Dana langsung dikirim ke pembuat proyek tanpa perantara, dan setiap transaksi dapat diverifikasi oleh siapa saja.</p>
                     </div>
                 </div>
                 <div class="faq-item fade-in delay-3">
@@ -1063,9 +1399,40 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Donasi melalui Web3 memberikan transparansi penuh, biaya transaksi yang lebih rendah, keamanan yang terjamin, dan akses global tanpa batasan geografis.</p>
+                        <p>Donasi melalui Web3 memberikan transparansi penuh, biaya transaksi yang lebih rendah, keamanan yang terjamin, akses global tanpa batasan geografis, serta kemampuan untuk melacak penggunaan dana secara real-time melalui blockchain.</p>
                     </div>
                 </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        Bagaimana cara melacak donasi saya?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Setiap donasi tercatat di blockchain dan dapat dilacak melalui explorer blockchain seperti Etherscan. Anda juga akan mendapatkan notifikasi update langsung dari penerima donasi melalui platform kami.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-1">
+                    <div class="faq-question">
+                        Apakah ada biaya transaksi?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami menerapkan biaya layanan sebesar 2% dari setiap donasi untuk menjaga keberlanjutan platform. Selain itu, ada biaya gas jaringan yang berlaku untuk setiap transaksi blockchain, yang bervariasi tergantung pada kondisi jaringan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Siap Membuat Perubahan?</h2>
+            <p>Bergabunglah dengan ribuan orang yang telah menggunakan Web3OpenProjek untuk mendukung inovasi dan menciptakan dampak positif.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn">Jelajahi Proyek</a>
+                <a href="#" class="btn btn-accent" id="ctaConnectWallet">Hubungkan Wallet</a>
+                <a href="#" class="btn btn-success">Ajukan Proyek</a>
             </div>
         </div>
     </section>
@@ -1079,7 +1446,7 @@
                         <i class="fas fa-cube"></i>
                         Web3<span>OpenProjek</span>
                     </div>
-                    <p>Platform donasi terdesentralisasi untuk mendukung proyek-proyek inovatif yang mengubah dunia.</p>
+                    <p>Platform donasi terdesentralisasi untuk mendukung proyek-proyek inovatif yang mengubah dunia. Transparan, aman, dan langsung ke pembuat proyek.</p>
                     <div class="social-links">
                         <a href="https://tiktok.com/@rr.corp" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
                         <a href="https://youtube.com/@RRCORP.company" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
@@ -1096,12 +1463,24 @@
                         <li><a href="#projects">Proyek</a></li>
                         <li><a href="#how-it-works">Cara Kerja</a></li>
                         <li><a href="#impact">Dampak</a></li>
+                        <li><a href="#security">Keamanan</a></li>
                         <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Sumber Daya</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Panduan</a></li>
+                        <li><a href="#">Whitepaper</a></li>
+                        <li><a href="#">Bantuan</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Kontak</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
                     <h3>Berlangganan Update</h3>
-                    <p>Dapatkan informasi terbaru tentang proyek-proyek inovatif.</p>
+                    <p>Dapatkan informasi terbaru tentang proyek-proyek inovatif dan update platform.</p>
                     <form id="newsletterForm">
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Masukkan email Anda" required>
@@ -1112,6 +1491,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2023 Web3OpenProjek. All Rights Reserved. | Alamat Donasi: 0xE6206E8C6060942B61f42Ec675D415462c1D7986</p>
+                <p>Platform ini menggunakan teknologi blockchain Ethereum untuk memastikan transparansi dan keamanan.</p>
             </div>
         </div>
     </footer>
@@ -1240,7 +1620,9 @@
                 target: 50,
                 raised: 28.5,
                 donors: 142,
-                daysLeft: 15
+                daysLeft: 15,
+                category: "Pendidikan",
+                badge: "Trending"
             },
             {
                 id: 2,
@@ -1250,427 +1632,12 @@
                 target: 30,
                 raised: 12.7,
                 donors: 87,
-                daysLeft: 22
+                daysLeft: 22,
+                category: "Teknologi",
+                badge: "Baru"
             },
             {
                 id: 3,
                 title: "Energi Terbarukan Komunitas",
                 description: "Instalasi panel surya dan sistem penyimpanan energi untuk komunitas terpencil yang belum terjangkau listrik.",
-                image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-                target: 75,
-                raised: 42.3,
-                donors: 215,
-                daysLeft: 8
-            },
-            {
-                id: 4,
-                title: "Aplikasi Kesehatan Mental",
-                description: "Pengembangan aplikasi mobile untuk memberikan konseling dan dukungan kesehatan mental yang terjangkau dan mudah diakses.",
-                image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-                target: 40,
-                raised: 18.9,
-                donors: 103,
-                daysLeft: 30
-            },
-            {
-                id: 5,
-                title: "IoT untuk Pertanian Berkelanjutan",
-                description: "Implementasi teknologi IoT untuk memantau dan mengoptimalkan penggunaan air dan pupuk dalam pertanian berkelanjutan.",
-                image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-                target: 60,
-                raised: 35.6,
-                donors: 178,
-                daysLeft: 12
-            },
-            {
-                id: 6,
-                title: "Platform Edukasi Crypto",
-                description: "Membangun platform edukasi untuk membantu masyarakat memahami cryptocurrency dan teknologi blockchain dengan mudah.",
-                image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-                target: 25,
-                raised: 8.4,
-                donors: 64,
-                daysLeft: 45
-            }
-        ];
-
-        // Impact stats
-        const impactStats = {
-            projectsCount: 42,
-            donorsCount: 2580,
-            amountRaised: 248.75,
-            successRate: 87
-        };
-
-        // Current project for donation
-        let currentProject = null;
-
-        // Initialize the application
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create custom particles
-            createParticles();
-            
-            // Create blockchain animation
-            createBlockchainAnimation();
-            
-            // Load projects
-            loadProjects();
-            
-            // Load impact stats
-            loadImpactStats();
-            
-            // Initialize FAQ accordion
-            initFAQ();
-            
-            // Initialize wallet connection
-            initWallet();
-            
-            // Initialize donation modal
-            initDonationModal();
-            
-            // Initialize newsletter form
-            initNewsletterForm();
-            
-            // Header scroll effect
-            window.addEventListener('scroll', function() {
-                const header = document.getElementById('header');
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-            
-            // Mobile menu toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            
-            hamburger.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-            });
-            
-            // Close mobile menu when clicking on a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                });
-            });
-        });
-
-        // Load projects into the grid
-        function loadProjects() {
-            const projectsGrid = document.getElementById('projectsGrid');
-            
-            projects.forEach(project => {
-                const progress = (project.raised / project.target) * 100;
-                
-                const projectCard = document.createElement('div');
-                projectCard.classList.add('project-card', 'fade-in');
-                projectCard.innerHTML = `
-                    <div class="project-image">
-                        <img src="${project.image}" alt="${project.title}">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">${project.title}</h3>
-                        <p class="project-description">${project.description}</p>
-                        <div class="project-details">
-                            <div class="project-detail">
-                                <div class="detail-value">${project.raised} ETH</div>
-                                <div class="detail-label">Terkumpul</div>
-                            </div>
-                            <div class="project-detail">
-                                <div class="detail-value">${project.donors}</div>
-                                <div class="detail-label">Donatur</div>
-                            </div>
-                            <div class="project-detail">
-                                <div class="detail-value">${project.daysLeft}</div>
-                                <div class="detail-label">Hari Lagi</div>
-                            </div>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: ${progress}%"></div>
-                        </div>
-                        <button class="btn btn-success donate-btn" data-id="${project.id}">Dukung Sekarang</button>
-                    </div>
-                `;
-                
-                projectsGrid.appendChild(projectCard);
-                
-                // Animate progress bar after a short delay
-                setTimeout(() => {
-                    const progressFill = projectCard.querySelector('.progress-fill');
-                    progressFill.style.width = `${progress}%`;
-                }, 300);
-            });
-            
-            // Add event listeners to donate buttons
-            document.querySelectorAll('.donate-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const projectId = parseInt(this.getAttribute('data-id'));
-                    openDonationModal(projectId);
-                });
-            });
-        }
-
-        // Load impact stats with counting animation
-        function loadImpactStats() {
-            const projectsCount = document.getElementById('projectsCount');
-            const donorsCount = document.getElementById('donorsCount');
-            const amountRaised = document.getElementById('amountRaised');
-            const successRate = document.getElementById('successRate');
-            
-            animateValue(projectsCount, 0, impactStats.projectsCount, 1500);
-            animateValue(donorsCount, 0, impactStats.donorsCount, 1500);
-            animateValue(amountRaised, 0, impactStats.amountRaised, 1500, ' ETH');
-            animateValue(successRate, 0, impactStats.successRate, 1500, '%');
-        }
-
-        // Animate value counting
-        function animateValue(element, start, end, duration, suffix = '') {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const value = Math.floor(progress * (end - start) + start);
-                element.innerHTML = value.toLocaleString() + suffix;
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        // Initialize FAQ accordion
-        function initFAQ() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', () => {
-                    // Close other open items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                    
-                    // Toggle current item
-                    item.classList.toggle('active');
-                });
-            });
-        }
-
-        // Initialize wallet connection
-        function initWallet() {
-            const connectBtn = document.getElementById('connectWallet');
-            const walletInfo = document.getElementById('walletInfo');
-            const walletStatus = document.getElementById('walletStatus');
-            
-            // Check if MetaMask is installed
-            if (typeof window.ethereum !== 'undefined') {
-                // Check if already connected
-                ethereum.request({ method: 'eth_accounts' })
-                    .then(accounts => {
-                        if (accounts.length > 0) {
-                            const shortAddress = `${accounts[0].substring(0, 6)}...${accounts[0].substring(accounts[0].length - 4)}`;
-                            walletStatus.textContent = shortAddress;
-                            walletInfo.classList.add('connected');
-                            connectBtn.textContent = 'Terhubung';
-                        }
-                    })
-                    .catch(err => {
-                        console.error(err);
-                    });
-                
-                // Connect wallet button
-                connectBtn.addEventListener('click', () => {
-                    ethereum.request({ method: 'eth_requestAccounts' })
-                        .then(accounts => {
-                            const shortAddress = `${accounts[0].substring(0, 6)}...${accounts[0].substring(accounts[0].length - 4)}`;
-                            walletStatus.textContent = shortAddress;
-                            walletInfo.classList.add('connected');
-                            connectBtn.textContent = 'Terhubung';
-                            showNotification('Wallet berhasil terhubung!');
-                        })
-                        .catch(err => {
-                            console.error(err);
-                            showNotification('Gagal menghubungkan wallet.', true);
-                        });
-                });
-                
-                // Listen for account changes
-                ethereum.on('accountsChanged', (accounts) => {
-                    if (accounts.length === 0) {
-                        walletStatus.textContent = 'Belum Terhubung';
-                        walletInfo.classList.remove('connected');
-                        connectBtn.textContent = 'Hubungkan Wallet';
-                    } else {
-                        const shortAddress = `${accounts[0].substring(0, 6)}...${accounts[0].substring(accounts[0].length - 4)}`;
-                        walletStatus.textContent = shortAddress;
-                        walletInfo.classList.add('connected');
-                        connectBtn.textContent = 'Terhubung';
-                    }
-                });
-            } else {
-                connectBtn.textContent = 'Instal MetaMask';
-                connectBtn.addEventListener('click', () => {
-                    window.open('https://metamask.io/download.html', '_blank');
-                });
-            }
-        }
-
-        // Initialize donation modal
-        function initDonationModal() {
-            const modal = document.getElementById('donationModal');
-            const closeModal = document.getElementById('closeModal');
-            const confirmDonation = document.getElementById('confirmDonation');
-            const amountOptions = document.querySelectorAll('.amount-option');
-            
-            // Close modal
-            closeModal.addEventListener('click', () => {
-                modal.classList.remove('active');
-            });
-            
-            // Click outside modal to close
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                }
-            });
-            
-            // Amount options selection
-            amountOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    amountOptions.forEach(opt => opt.classList.remove('selected'));
-                    option.classList.add('selected');
-                    document.getElementById('donationAmount').value = option.getAttribute('data-amount');
-                });
-            });
-            
-            // Confirm donation
-            confirmDonation.addEventListener('click', () => {
-                const amount = document.getElementById('donationAmount').value;
-                
-                if (!amount || parseFloat(amount) <= 0) {
-                    showNotification('Masukkan jumlah donasi yang valid.', true);
-                    return;
-                }
-                
-                if (typeof window.ethereum === 'undefined') {
-                    showNotification('Silakan instal MetaMask terlebih dahulu.', true);
-                    return;
-                }
-                
-                // Check if wallet is connected
-                ethereum.request({ method: 'eth_accounts' })
-                    .then(accounts => {
-                        if (accounts.length === 0) {
-                            showNotification('Silakan hubungkan wallet Anda terlebih dahulu.', true);
-                            return;
-                        }
-                        
-                        // For demo purposes, we'll simulate a transaction
-                        // In a real application, you would send an actual transaction here
-                        simulateTransaction(accounts[0], amount);
-                    })
-                    .catch(err => {
-                        console.error(err);
-                        showNotification('Terjadi kesalahan. Silakan coba lagi.', true);
-                    });
-            });
-        }
-
-        // Simulate transaction for demo purposes
-        function simulateTransaction(from, amount) {
-            const modal = document.getElementById('donationModal');
-            
-            // Show loading state
-            const confirmBtn = document.getElementById('confirmDonation');
-            const originalText = confirmBtn.textContent;
-            confirmBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses...';
-            confirmBtn.disabled = true;
-            
-            // Simulate transaction delay
-            setTimeout(() => {
-                modal.classList.remove('active');
-                showNotification(`Donasi ${amount} ETH berhasil! Terima kasih atas kontribusinya.`);
-                
-                // Reset form
-                document.getElementById('donationAmount').value = '';
-                document.getElementById('donorName').value = '';
-                document.getElementById('donorMessage').value = '';
-                document.querySelectorAll('.amount-option').forEach(opt => opt.classList.remove('selected'));
-                
-                // Reset button
-                confirmBtn.textContent = originalText;
-                confirmBtn.disabled = false;
-            }, 2000);
-        }
-
-        // Initialize newsletter form
-        function initNewsletterForm() {
-            const newsletterForm = document.getElementById('newsletterForm');
-            
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const emailInput = this.querySelector('input[type="email"]');
-                
-                if (emailInput.value) {
-                    showNotification('Terima kasih telah berlangganan newsletter kami!');
-                    emailInput.value = '';
-                }
-            });
-        }
-
-        // Open donation modal for a specific project
-        function openDonationModal(projectId) {
-            currentProject = projects.find(p => p.id === projectId);
-            
-            if (typeof window.ethereum === 'undefined') {
-                showNotification('Silakan instal MetaMask terlebih dahulu.', true);
-                return;
-            }
-            
-            // Check if wallet is connected
-            ethereum.request({ method: 'eth_accounts' })
-                .then(accounts => {
-                    if (accounts.length === 0) {
-                        showNotification('Silakan hubungkan wallet Anda terlebih dahulu.', true);
-                        return;
-                    }
-                    
-                    const modal = document.getElementById('donationModal');
-                    modal.classList.add('active');
-                })
-                .catch(err => {
-                    console.error(err);
-                    showNotification('Terjadi kesalahan. Silakan coba lagi.', true);
-                });
-        }
-
-        // Show notification
-        function showNotification(message, isError = false) {
-            const notification = document.getElementById('notification');
-            const notificationIcon = document.getElementById('notificationIcon');
-            const notificationMessage = document.getElementById('notificationMessage');
-            
-            notificationMessage.textContent = message;
-            
-            if (isError) {
-                notification.classList.add('error');
-                notificationIcon.className = 'fas fa-exclamation-circle';
-            } else {
-                notification.classList.remove('error');
-                notificationIcon.className = 'fas fa-check-circle';
-            }
-            
-            notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 5000);
-        }
-    </script>
-</body>
-  </html>
+                image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=c
