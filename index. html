@@ -258,6 +258,7 @@
             height: 2px;
             background: var(--secondary);
             transition: var(--transition);
+            z-index: -1;
         }
 
         .nav-links a:hover {
@@ -500,6 +501,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+            position: relative;
         }
 
         .form-group {
@@ -714,6 +716,7 @@
             display: flex;
             gap: 15px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .social-link {
@@ -756,6 +759,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            max-width: 350px;
         }
 
         .notification.show {
@@ -765,6 +769,39 @@
 
         .notification.error {
             border-left-color: #ff3e3e;
+        }
+
+        /* Blockchain Animation */
+        .blockchain-animation {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .block {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: var(--secondary);
+            border-radius: 5px;
+            bottom: 0;
+            opacity: 0.7;
+            animation: floatBlock 15s linear infinite;
+        }
+
+        @keyframes floatBlock {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
         }
 
         /* Responsive Design */
@@ -820,6 +857,38 @@
             .donation-amounts {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation for elements */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
         }
     </style>
 </head>
@@ -832,6 +901,9 @@
 
     <!-- Particles Background -->
     <div id="particles-js"></div>
+
+    <!-- Blockchain Animation -->
+    <div class="blockchain-animation" id="blockchainAnimation"></div>
 
     <!-- Header & Navigation -->
     <header id="header">
@@ -891,28 +963,28 @@
         <div class="container">
             <h2 class="section-title">Cara Berkontribusi</h2>
             <div class="steps">
-                <div class="step">
+                <div class="step fade-in">
                     <div class="step-icon">
                         <i class="fas fa-wallet"></i>
                     </div>
                     <h3 class="step-title">Hubungkan Wallet</h3>
                     <p>Hubungkan dompet MetaMask Anda untuk mulai berdonasi menggunakan cryptocurrency.</p>
                 </div>
-                <div class="step">
+                <div class="step fade-in delay-1">
                     <div class="step-icon">
                         <i class="fas fa-search"></i>
                     </div>
                     <h3 class="step-title">Jelajahi Proyek</h3>
                     <p>Temukan proyek-proyek inovatif yang sesuai dengan passion dan minat Anda.</p>
                 </div>
-                <div class="step">
+                <div class="step fade-in delay-2">
                     <div class="step-icon">
                         <i class="fas fa-donate"></i>
                     </div>
                     <h3 class="step-title">Berdonasi</h3>
                     <p>Berdonasi dengan jumlah yang Anda inginkan dan dukung inovasi masa depan.</p>
                 </div>
-                <div class="step">
+                <div class="step fade-in delay-3">
                     <div class="step-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -928,19 +1000,19 @@
         <div class="container">
             <h2 class="section-title">Dampak Kami</h2>
             <div class="impact-stats">
-                <div class="stat">
+                <div class="stat fade-in">
                     <div class="stat-number" id="projectsCount">0</div>
                     <div class="stat-label">Proyek Terdanai</div>
                 </div>
-                <div class="stat">
+                <div class="stat fade-in delay-1">
                     <div class="stat-number" id="donorsCount">0</div>
                     <div class="stat-label">Donatur</div>
                 </div>
-                <div class="stat">
+                <div class="stat fade-in delay-2">
                     <div class="stat-number" id="amountRaised">0 ETH</div>
                     <div class="stat-label">Terkumpul</div>
                 </div>
-                <div class="stat">
+                <div class="stat fade-in delay-3">
                     <div class="stat-number" id="successRate">0%</div>
                     <div class="stat-label">Tingkat Kesuksesan</div>
                 </div>
@@ -953,7 +1025,7 @@
         <div class="container">
             <h2 class="section-title">Pertanyaan Umum</h2>
             <div class="faq-container">
-                <div class="faq-item">
+                <div class="faq-item fade-in">
                     <div class="faq-question">
                         Apa itu Web3OpenProjek?
                         <i class="fas fa-chevron-down"></i>
@@ -962,7 +1034,7 @@
                         <p>Web3OpenProjek adalah platform donasi terdesentralisasi yang memanfaatkan teknologi blockchain untuk memungkinkan pendanaan proyek-proyek inovatif secara transparan dan aman.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item fade-in delay-1">
                     <div class="faq-question">
                         Bagaimana cara donasi?
                         <i class="fas fa-chevron-down"></i>
@@ -971,7 +1043,7 @@
                         <p>Pertama, hubungkan dompet MetaMask Anda. Kemudian pilih proyek yang ingin Anda dukung, tentukan jumlah donasi, dan konfirmasi transaksi melalui MetaMask.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item fade-in delay-2">
                     <div class="faq-question">
                         Apakah donasi aman?
                         <i class="fas fa-chevron-down"></i>
@@ -980,7 +1052,7 @@
                         <p>Ya, semua transaksi dilakukan melalui smart contract di blockchain, menjamin keamanan dan transparansi. Dana langsung dikirim ke pembuat proyek tanpa perantara.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item fade-in delay-3">
                     <div class="faq-question">
                         Apa keuntungan donasi melalui Web3?
                         <i class="fas fa-chevron-down"></i>
@@ -1004,10 +1076,12 @@
                     </div>
                     <p>Platform donasi terdesentralisasi untuk mendukung proyek-proyek inovatif yang mengubah dunia.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://tiktok.com/@rr.corp" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com/@RRCORP.company" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com/Companyrrcorp" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/RRCORP-hub" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/rr.corp.official" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.me/rrcorpcommunity" target="_blank" class="social-link"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -1023,7 +1097,7 @@
                 <div class="footer-newsletter">
                     <h3>Berlangganan Update</h3>
                     <p>Dapatkan informasi terbaru tentang proyek-proyek inovatif.</p>
-                    <form>
+                    <form id="newsletterForm">
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Masukkan email Anda" required>
                         </div>
@@ -1032,7 +1106,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Web3OpenProjek. All Rights Reserved.</p>
+                <p>&copy; 2023 Web3OpenProjek. All Rights Reserved. | Alamat Donasi: 0xE6206E8C6060942B61f42Ec675D415462c1D7986</p>
             </div>
         </div>
     </footer>
@@ -1072,7 +1146,7 @@
 
     <!-- Notification -->
     <div class="notification" id="notification">
-        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-check-circle" id="notificationIcon"></i>
         <div id="notificationMessage">Transaksi berhasil!</div>
     </div>
 
@@ -1123,6 +1197,19 @@
             },
             retina_detect: true
         });
+
+        // Create blockchain animation
+        function createBlockchainAnimation() {
+            const container = document.getElementById('blockchainAnimation');
+            for (let i = 0; i < 15; i++) {
+                const block = document.createElement('div');
+                block.classList.add('block');
+                block.style.left = Math.random() * 100 + '%';
+                block.style.animationDelay = Math.random() * 15 + 's';
+                block.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(block);
+            }
+        }
 
         // Sample projects data
         const projects = [
@@ -1201,6 +1288,9 @@
 
         // Initialize the application
         document.addEventListener('DOMContentLoaded', function() {
+            // Create blockchain animation
+            createBlockchainAnimation();
+            
             // Load projects
             loadProjects();
             
@@ -1215,6 +1305,9 @@
             
             // Initialize donation modal
             initDonationModal();
+            
+            // Initialize newsletter form
+            initNewsletterForm();
             
             // Header scroll effect
             window.addEventListener('scroll', function() {
@@ -1250,7 +1343,7 @@
                 const progress = (project.raised / project.target) * 100;
                 
                 const projectCard = document.createElement('div');
-                projectCard.classList.add('project-card');
+                projectCard.classList.add('project-card', 'fade-in');
                 projectCard.innerHTML = `
                     <div class="project-image">
                         <img src="${project.image}" alt="${project.title}">
@@ -1484,6 +1577,21 @@
             });
         }
 
+        // Initialize newsletter form
+        function initNewsletterForm() {
+            const newsletterForm = document.getElementById('newsletterForm');
+            
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                
+                if (emailInput.value) {
+                    showNotification('Terima kasih telah berlangganan newsletter kami!');
+                    emailInput.value = '';
+                }
+            });
+        }
+
         // Open donation modal for a specific project
         function openDonationModal(projectId) {
             currentProject = projects.find(p => p.id === projectId);
@@ -1513,14 +1621,17 @@
         // Show notification
         function showNotification(message, isError = false) {
             const notification = document.getElementById('notification');
+            const notificationIcon = document.getElementById('notificationIcon');
             const notificationMessage = document.getElementById('notificationMessage');
             
             notificationMessage.textContent = message;
             
             if (isError) {
                 notification.classList.add('error');
+                notificationIcon.className = 'fas fa-exclamation-circle';
             } else {
                 notification.classList.remove('error');
+                notificationIcon.className = 'fas fa-check-circle';
             }
             
             notification.classList.add('show');
